@@ -5,8 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+            text-transform: capitalize;
+        }
+        
+        h1 {
+            color: transparent;
+            -webkit-text-stroke: 1px blue;
+            margin: 20px;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to top left,rgb(255, 99, 37),
+            rgb(168, 1, 235));
+            border-image-slice: 20;
+            padding: 4px 20px;
+            display: inline-block;
+        }
+
+        h1 ~:not(::first-letter) {
+            color: blue !important;
+            animation: wink 650ms linear infinite alternate;
+        }
+
+        h1::first-letter {
+            animation-name: wink2;
+        }
+
+        h1::selection {
+            -webkit-text-stroke: 1px blue;
+            background: purple;
+            color: transparent;
+            animation: 0;
+        }
+        @keyframes wink {
+            0%,10%,30% {
+                color: blue;
+            }
+
+            50%, 60%,65%,90% {
+                color: transparent;
+            }
+
+            90%,100% {
+                color: blue;
+            }
+        }
+        @keyframes wink2 {
+            0%,10%,30% {
+                color: red;
+            }
+
+            50%, 60%,65%,90% {
+                color: transparent;
+            }
+
+            90%,100% {
+                color: red;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>mahdi</h1>
 </body>
-</html>
+</html> 
